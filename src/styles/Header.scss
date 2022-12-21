@@ -1,0 +1,62 @@
+.header {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    position:sticky;
+    top:0;
+    left:0;
+    height:70px;
+    padding:0 30px;
+    background-image:url('/assets/images/header_bg.png');
+    background-repeat:repeat;
+    background-position:bottom center;
+    z-index:100;
+
+    .header-logo {
+        width: 80px;
+        object-fit: contain;
+    }
+
+    a { 
+        line-height: 1.2em;
+        color:#000;
+        text-decoration: none;
+    } 
+
+    .header-nav {
+        display:flex;
+        justify-content: space-evenly;
+        color:#000;
+
+        .header-option {
+            display:flex;
+            flex-direction:column;
+            margin:0 10px;
+            text-align: center;
+        }
+        
+        .header-option-line-one {
+            font-size:10px;
+        }
+        
+        .header-option-line-two {
+            font-size:13px;
+            font-weight:800;
+        }
+        
+        .header-option-basket {
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            color:#000;
+
+            div {
+                display:flex;
+            }
+        }
+        
+        .header-option-line-twoheader-basket-count {
+            margin:0 10px;
+        }
+    }
+}

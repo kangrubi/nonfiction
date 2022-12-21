@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "제품1",
+    "price": 3000,
+    "imgUrl": "images/prod1.png",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "title": "제품2",
+    "price": 2000,
+    "imgUrl": "images/prod2.png",
+    "rating": 2
+  },
+  {
+    "id": 3,
+    "title": "제품4",
+    "price": 4000,
+    "imgUrl": "images/prod3.png",
+    "rating": 3
+  },
+  {
+    "id": 4,
+    "title": "제품5",
+    "price": 5000,
+    "imgUrl": "images/prod4.png",
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "title": "제품6",
+    "price": 6000,
+    "imgUrl": "images/prod5.png",
+    "rating": 1
+  },
+  {
+    "id": 6,
+    "title": "제품7",
+    "price": 7000,
+    "imgUrl": "images/prod6.png",
+    "rating": 3
+  }
+]

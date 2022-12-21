@@ -1,0 +1,35 @@
+.payment {
+  background:#fff;
+
+  .payment-container {
+
+    .checkout-link {
+      display:block;
+      padding:10px;
+      text-align:center;
+      color:#333;
+      background-color:rgb(234, 237, 237);
+      text-decoration: none;
+
+      h2 {
+        font-size:18px;
+        line-height: 1.3em;
+      }
+    }
+
+  }
+
+  .payment-section {
+    display:flex;
+    padding:20px;
+    margin:0 20px;
+    border-bottom:1px solid #8768bf;
+
+    .payment-title {
+      flex:0.2;
+    }
+    .payment-details {
+      flex:0.8
+    }
+  }
+}
