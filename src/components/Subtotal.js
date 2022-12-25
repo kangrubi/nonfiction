@@ -21,7 +21,7 @@ function Subtotal() {
         decimalScale={2}
         value={getBasketTotal(basket)}
         displayType="text"
-        thousandsSeparator={true}
+        thousandSeparator={true}
         prefix="₩"
       />
       <button onClick={e => navigate('/payment')}>결제하기</button>
