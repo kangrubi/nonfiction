@@ -20,7 +20,9 @@ function Header() {
       </Link>
       <div className="header-nav">
         <div className="header-option">
-          <span className="header-option-line-one">안녕하세요!</span>
+          <span className="header-option-line-one">
+            {!user ? '게스트' : user.email}
+          </span>
           <Link to={!user && '/login'} className="home-login">
             <span
               onClick={handleAuthentication}
