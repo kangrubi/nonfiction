@@ -18,8 +18,6 @@ function Product({ id, title, image, price, rating }) {
     });
   };
 
-  // console.log("장바구니 확인", basket);
-
   return (
     <div className="product">
       <div className="product-box">
@@ -34,7 +32,7 @@ function Product({ id, title, image, price, rating }) {
           <div className="product-rating">
             {Array(rating)
               .fill()
-              .map(_ => (
+              .map((_, i) => (
                 <p>★</p>
               ))}
           </div>

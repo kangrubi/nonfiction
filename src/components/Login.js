@@ -17,7 +17,7 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const signIn = () => {
+  const signInBtnClick = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(auth => {
@@ -28,7 +28,7 @@ function Login() {
       });
   };
 
-  const join = e => {
+  const joinBtnClick = e => {
     e.preventDefault();
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -46,7 +46,7 @@ function Login() {
     <div className="login">
       <div className="login-container">
         <h2>로그인</h2>
-        <form onSubmit={handleSubmit(signIn)}>
+        <form onSubmit={handleSubmit(signInBtnClick)}>
           <h3>이메일</h3>
           <input
             type="text"
@@ -86,7 +86,7 @@ function Login() {
           <button className="login-signin-button">로그인 하기</button>
         </form>
         <p>아직 회원이 아니십니까?</p>
-        <button onClick={join} className="login-register-button">
+        <button onClick={joinBtnClick} className="login-register-button">
           회원가입
         </button>
       </div>
