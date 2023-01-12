@@ -22,6 +22,7 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(auth => {
         navigate('/');
+        localStorage.setItem('token', JSON.stringify(auth.user.uid));
       })
       .catch(error => {
         alert(error.message);
@@ -35,6 +36,7 @@ function Login() {
       .then(auth => {
         if (auth) {
           navigate('/');
+          localStorage.setItem('token', JSON.stringify(auth.user.uid));
         }
       })
       .catch(error => {

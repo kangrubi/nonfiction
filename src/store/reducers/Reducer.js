@@ -11,8 +11,8 @@ const reducer = (state = initialState, action) => {
         basket: [...state.basket, action.payload],
       };
     case 'REMOVE_FROM_BASKET':
-      const index = state.basket.filter(
-        basketItem => basketItem.id === action.id
+      const index = state.basket.findIndex(
+        basketItem => basketItem.id === action.payload
       );
       let newBasket = [...state.basket];
 

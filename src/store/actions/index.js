@@ -5,10 +5,10 @@ export const addToBasket = item => {
   };
 };
 
-export const removeFromBasket = item => {
+export const removeFromBasket = id => {
   return {
     type: 'REMOVE_FROM_BASKET',
-    payload: item,
+    payload: id,
   };
 };
 
