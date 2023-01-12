@@ -1,21 +1,17 @@
 import React from 'react';
 import '../styles/Product.scss';
-import { useStateValue } from '../StateProvider';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../store/actions/index';
 
 function Product({ id, title, image, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const dispatch = useDispatch();
 
-  const addToBasket = () => {
-    dispatch({
-      type: 'ADD_TO_BASKET',
-      item: {
-        id,
-        title,
-        image,
-        price,
-        rating,
-      },
-    });
+  const item = {
+    id,
+    title,
+    image,
+    price,
+    rating,
   };
 
   return (
@@ -33,12 +29,12 @@ function Product({ id, title, image, price, rating }) {
             {Array(rating)
               .fill()
               .map((_, i) => (
-                <p>★</p>
+                <p key={i}>★</p>
               ))}
           </div>
         </div>
         <img src={image} alt={title} />
-        <button onClick={addToBasket}>Add to cart</button>
+        <button onClick={() => dispatch(addToBasket(item))}>Add to cart</button>
       </div>
     </div>
   );

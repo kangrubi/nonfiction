@@ -2,16 +2,12 @@ import React from 'react';
 import '../styles/Header.scss';
 import { ShoppingBasket } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import { useStateValue } from '../StateProvider';
+import { useSelector } from 'react-redux';
 import { auth } from '../lib/firebase';
 
 function Header() {
-  const [{ basket, user }, dispatch] = useStateValue();
-  const handleAuthentication = () => {
-    if (user) {
-      auth.signOut();
-    }
-  };
+  const user = useSelector(store => store.Reducer.user);
+  const basket = useSelector(store => store.Reducer.basket);
 
   return (
     <div className="header">
@@ -25,7 +21,7 @@ function Header() {
           </span>
           <Link to={!user && '/login'} className="home-login">
             <span
-              onClick={handleAuthentication}
+              onClick={() => auth.signOut()}
               className="header-option-line-two"
             >
               {user ? '로그아웃' : '로그인'}

@@ -1,16 +1,10 @@
 import React from 'react';
 import '../styles/CheckoutProduct.scss';
-import { useStateValue } from '../StateProvider';
+import { useDispatch } from 'react-redux';
+import { removeFromBasket } from '../store/actions/index';
 
 function CheckoutProduct({ id, image, title, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
-
-  const removeFromBasket = () => {
-    dispatch({
-      type: 'REMOVE_FROM_BASKET',
-      id: id,
-    });
-  };
+  const dispatch = useDispatch();
 
   return (
     <div className="checkout-product">
@@ -26,10 +20,12 @@ function CheckoutProduct({ id, image, title, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>★</p>
+              <p key={i}>★</p>
             ))}
         </div>
-        <button onClick={removeFromBasket}>장바구니에서 제거하기</button>
+        <button onClick={() => dispatch(removeFromBasket(id))}>
+          장바구니에서 제거하기
+        </button>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/Payment.scss';
-import { useStateValue } from '../StateProvider';
 import { Link } from 'react-router-dom';
 import CheckoutProduct from './CheckoutProduct';
+import { useSelector } from 'react-redux';
 
 function Payment() {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const user = useSelector(store => store.Reducer.user);
+  const basket = useSelector(store => store.Reducer.basket);
 
   return (
     <div className="payment">

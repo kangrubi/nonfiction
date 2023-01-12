@@ -7,10 +7,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import { useEffect } from 'react';
 import { auth } from './lib/firebase';
-import { useStateValue } from './StateProvider';
+import { useDispatch } from 'react-redux';
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
@@ -26,7 +26,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
